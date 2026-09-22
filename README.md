@@ -1,11 +1,12 @@
 # This Is Math
 
-An interactive geometric chord instrument built with Streamlit, Canvas, and the Web Audio API.
+An interactive mathematical music instrument built with Streamlit, Canvas, and the Web Audio API.
 
 Choose a triangle, square, pentagon, hexagon, or octagon. Each form produces its own
 animated geometry and musical harmony directly in the browser. Play individual
 vertices, draw patterns between notes, record and loop sequences, or explore the
-mathematics behind each regular polygon.
+mathematics behind each regular polygon. Pattern Lab turns modular arithmetic and
+symmetry rules into visible, playable sequences.
 
 ## Using the instrument
 
@@ -21,6 +22,28 @@ mathematics behind each regular polygon.
   Octave changes pitch; Glow changes visual intensity.
 - Keyboard shortcuts: `3`, `4`, `5`, `6`, or `8` select shapes; `R` randomizes;
   `C` clears. Focus the Canvas and use arrow keys plus Enter to play vertices.
+
+## Pattern Lab
+
+Open **Pattern Lab** to preview a mathematical path without changing your manual
+drawing. Choose a rule, direction, and optional vertex labels, then press **Use
+pattern**. The existing Play, Loop, Stop, Clear, Sequence Tempo, Octave, and Glow
+controls operate on the generated sequence.
+
+Available rules:
+
+- **Step** repeatedly adds a chosen step modulo the polygon's vertex count.
+- **Around** visits consecutive vertices.
+- **Skip** connects every second vertex.
+- **Star** chooses a coprime step that forms a regular star where one exists.
+- **Mirror** alternates symmetric vertex pairs.
+- **Bounce** moves around the polygon and then reverses direction.
+
+For a Step pattern, Pattern Lab reports `gcd(n, step)`, the unique vertices in one
+orbit, and the number of cycles. For example, Step 3 on an octagon visits all eight
+vertices because `gcd(8, 3) = 1`; Step 2 visits four vertices in each of two cycles.
+Math Mode reflects the current preview, and Challenge Mode can ask questions about
+that generated pattern.
 
 ## Run locally
 
