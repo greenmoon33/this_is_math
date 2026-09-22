@@ -3,12 +3,11 @@
 from pathlib import Path
 
 import streamlit as st
-import streamlit.components.v1 as components
 
 st.set_page_config(page_title="This Is Math", page_icon="◯", layout="wide")
 
 instrument_path = Path(__file__).with_name("instrument.html")
-components.html(instrument_path.read_text(encoding="utf-8"), height=920, scrolling=False)
+st.iframe(instrument_path, width="stretch", height=920)
 
 st.markdown(
     """
